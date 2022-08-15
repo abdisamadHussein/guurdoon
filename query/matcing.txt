@@ -1,0 +1,25 @@
+select aa.MaleName , aa.FeamleName,(aa.age_range+aa.Mariage_status+aa.education_level+aa.height+aa.weight+aa.skin_color+aa.cunto_karinta+aa.work_place)/8 as average, 
+COUNT(CASE WHEN aa.age_range != 0 OR aa.Mariage_status != 0   OR aa.education_level != 0 OR aa.height != 0  OR aa.weight != 0  OR aa.skin_color != 0  OR aa.cunto_karinta != 0  OR  aa.work_place != 0  THEN 100 END 
+) as tirada
+From
+(
+Select 
+case when A.user_id != B.user_id then  (select us.first_name+' '+ us.midlle_name+' '+ us.last_name from Users us WHERE us.user_id =A.user_id)  else 'N/A' end as MaleName, 
+case when A.user_id != B.user_id then (select us.first_name+' '+ us.midlle_name+' '+ us.last_name from Users us WHERE us.user_id =B.user_id) else 'N/A' end as FeamleName, 
+case when A.age_range = B.age_range then 100 else 0 end as age_range, 
+case when A.Mariage_status = B.Mariage_status then 100 else 0 end as Mariage_status,
+case when A.education_level = B.education_level then 100 else 0 end as education_level,
+case when A.height = B.height then 100 else 0 end as height,
+case when A.weight = B.weight then 100 else 0 end as weight,
+case when A.skin_color = B.skin_color then 100 else 0 end as skin_color,
+case when A.cunto_karinta = B.cunto_karinta then 100 else 0 end as cunto_karinta,
+case when B.work_place = 'No' then 100 else 0 end as work_place
+from malechoice A 
+Join infofemale B
+on (A.age_range = B.age_range) or (A.Mariage_status = B.Mariage_status) or (A.education_level = B.education_level) or 
+(A.height = B.height)or (A.weight = B.weight)or (A.skin_color = B.skin_color) or (A.cunto_karinta = B.cunto_karinta) or (A.work_place = B.work_place)
+join users u 
+on (u.user_id=a.user_id) 
+where A.user_id='5' ) as aa 
+WHERE  ((aa.age_range+aa.Mariage_status+aa.education_level+aa.height+aa.weight+aa.skin_color+aa.cunto_karinta+aa.work_place)/8) > 
+

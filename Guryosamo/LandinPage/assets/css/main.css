@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  /* list-style-type: none; */
+}
+li {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  top: 0;
+  background-color: #15751e;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 181px;
+  height: 36px;
+  left: 5rem;
+  /* margin-left: 7rem; */
+}
+
+.logo-image {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-left: 0.3rem;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  right: 5rem;
+}
+
+.nav .nav_item {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding: 25px 58px; */
+  width: 100px;
+  height: 2.5rem;
+  margin-left: 2.5rem;
+  font-weight: 700;
+  background: #79e230;
+  border-radius: 50px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  height: 721px;
+  background: #f8f8f8;
+}
+
+.hero .hero-image {
+  position: absolute;
+  width: 600px;
+  height: 252px;
+  right: 100px;
+  top: 18rem;
+}
+
+.hero .hero_info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: 18rem;
+}
+
+.hero_info .lead-1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.145em;
+  margin-bottom: -10px;
+}
+.hero_info h1 {
+  margin-top: 0;
+  padding: 0;
+  width: 318px;
+  height: 227px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 73px;
+  color: #15751e;
+}
+
+.hero_info .lead {
+  /* position: absolute; */
+  width: 641px;
+  height: 48px;
+  /* left: 127px;
+  top: 648px; */
+  margin-top: 0.5rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 114%;
+  color: #646464;
+}
+
+/* servives */
+
+.services {
+  height: 800px;
+}
+.section-title {
+  position: relative;
+  top: 7rem;
+}
+.small_title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #646464;
+  font-size: 16px;
+  margin-left: 5rem;
+  text-transform: uppercase;
+}
+.big_title {
+  position: relative;
+  font-size: 24px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.big_title::before {
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 4rem;
+  height: 3px;
+  border-radius: 5rem;
+  bottom: 1px;
+  line-height: 78px;
+  background: #ffd600;
+}
+
+.servl {
+  margin-top: 8rem;
+}
+
+.service_list {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  width: 273px;
+  height: 185px;
+  background: rgba(0, 188, 18, 0.85);
+  border-radius: 20px;
+  margin: 2rem;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+.card-title .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.card-title .itile {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  /* line-height: 28px; */
+  padding: 5px;
+  color: #fff;
+}
+
+.card-body p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 1rem 2rem;
+  color: #ffffff;
+}
+
+.taageero {
+  background: #f4b208d9;
+}
+.tababarro {
+  background: #3661fd;
+}
+.cilmibaaris {
+  background: #bc007cd9;
+}
+.wacyigelin {
+  background: #bc1700d9;
+}
+.dood {
+  background: #00bc8fd9;
+}
+
+/* Kulamada */
+
+.Kulamada {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 500px;
+  background: #f8f8f8;
+}
+
+.marti {
+  display: flex;
+  justify-content: center;
+  margin-top: 9rem;
+}
+
+.marti-image {
+  width: 190px;
+  border-radius: 50%;
+  /* border: 5px solid #00bc12; */
+  clip-path: circle();
+}
+
+.qoysaska {
+  display: flex;
+  flex-direction: column;
+  height: 670px;
+}
+.sawirada-qoysaaka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-qoys {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 100% 0%;
+  border-radius: 10px;
+  margin: 2rem;
+  filter: drop-shadow(0px 1px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* qoraal */
+.qoraal {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.box-qoute {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  perspective: 200px;
+  /* background-color: #15751e; */
+  margin-left: 5rem;
+}
+
+.box-qoute::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-bottom: 20px solid #15751e;
+  border-right: 20px solid #15751e;
+}
+.box-qoute::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-top: 20px solid #15751e;
+  border-left: 20px solid #15751e;
+}
+.text {
+  position: relative;
+  top: 30px;
+  left: -30px;
+  background: #262626;
+  width: 560px;
+  height: 340px;
+}
+
+.text div {
+  position: relative;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 40px 80px;
+  box-sizing: border-box;
+}
+
+.text div p {
+  margin: 0 0 20px;
+  pad: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.fa {
+  width: 80px;
+  height: 80px;
+  background: #15751f;
+  color: #fff;
+  text-align: center;
+  line-height: 80px !important;
+  font-size: 40px !important;
+}
+
+.fa.fa1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fa.fa2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.question {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  margin-left: 15rem;
+}
+
+.question h3 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 77px;
+}
+.question h2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 77px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: -30px;
+  padding: 0;
+  color: #646464;
+}
+
+.question .btn {
+  background: #212121;
+  margin-top: 3rem;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  width: 22rem;
+  height: 4rem;
+}
+
+footer {
+  display: flex;
+  /* justify-content: center; */
+  position: relative;
+  height: 300px;
+  background-color: #0e0f0e;
+}
+
+footer p {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  left: 35rem;
+  bottom: 3px;
+}
+
+.section-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 900px;
+}
+
+.section-footer h3 {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 3rem;
+}

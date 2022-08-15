@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.btnBorder {
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+    0%,100% {
+        background: #000000;
+        filter: blur(3px);
+    }
+
+    5%,95% {
+        background: #2fb344;
+        filter: blur(0px);
+    }
+}

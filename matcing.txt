@@ -1,0 +1,43 @@
+
+SELECT TOP 1 MaleName,FeamleName,age_range,Mariage_status,
+education_level,height,weight,skin_color,
+cunto_karinta,work_place, MAX(TOTAL)TOTAL FROM (
+
+SELECT  MaleName,FeamleName,SUM(age_range)age_range,SUM(Mariage_status)Mariage_status,
+SUM(education_level)education_level,SUM(height)height,SUM(weight) weight,SUM(skin_color)skin_color,
+SUM(cunto_karinta)cunto_karinta,SUM(work_place)work_place,
+
+SUM(age_range)+SUM(Mariage_status)+
+SUM(education_level)+SUM(height)+SUM(weight) +SUM(skin_color)+
+SUM(cunto_karinta)+SUM(work_place)TOTAL
+
+
+FROM (
+Select 
+case when A.user_id != B.user_id then  (select us.first_name+' '+ us.midlle_name+' '+ us.last_name from Users us WHERE us.user_id =A.user_id)  else 'N/A' end as MaleName, 
+case when A.user_id != B.user_id then (select us.first_name+' '+ us.midlle_name+' '+ us.last_name from Users us WHERE us.user_id =B.user_id) else 'N/A' end as FeamleName, 
+case when A.age_range = B.age_range then 100 else 0 end as age_range, 
+case when A.Mariage_status = B.Mariage_status then 100 else 0 end as Mariage_status,
+case when A.education_level = B.education_level then 100 else 0 end as education_level,
+case when A.height = B.height then 100 else 0 end as height,
+case when A.weight = B.weight then 100 else 0 end as weight,
+case when A.skin_color = B.skin_color then 100 else 0 end as skin_color,
+case when A.cunto_karinta = B.cunto_karinta then 100 else 0 end as cunto_karinta,
+case when B.work_place = 'No' then 100 else 0 end as work_place
+from malechoice A 
+Join infofemale B
+on (A.age_range = B.age_range) or (A.Mariage_status = B.Mariage_status) or (A.education_level = B.education_level) or 
+(A.height = B.height)or (A.weight = B.weight)or (A.skin_color = B.skin_color) or (A.cunto_karinta = B.cunto_karinta) or (A.work_place = B.work_place)
+join users u 
+on (u.user_id=a.user_id) 
+where A.user_id='6'
+) AS LL
+
+GROUP BY  MaleName,FeamleName
+
+
+) AS HH
+GROUP BY MaleName,FeamleName,age_range,Mariage_status,
+education_level,height,weight,skin_color,
+cunto_karinta,work_place
+ORDER BY TOTAL DESC
