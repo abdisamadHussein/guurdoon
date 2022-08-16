@@ -82,7 +82,7 @@
                 <div class="row text-center align-items-center flex-row-reverse">
                     <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                         <ul class="list-inline list-inline-dots mb-0">
-                            <li class="list-inline-item">Copyright &copy; Guryosamo2021
+                            <li class="list-inline-item">Copyright &copy; Guryosamo <span id="year" runat="server"></span>
                   <a href="." class="link-secondary"></a>.
                   All rights reserved.
                             </li>

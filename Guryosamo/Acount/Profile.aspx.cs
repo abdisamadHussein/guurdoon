@@ -444,8 +444,8 @@ namespace Guryosamo.Acount
                     foreach (DataRow row in dt.Rows)
                     {
 
-                        var cmd1 = new SqlCommand("INSERT INTO MatchingMale(male_id, female_id, male_status, female_staus, result, age_range, mariage_status, education_level, height, weight, skin_color, does_she_work, cooking, total, average) " +
-                            "VALUES ('" + row[0] + "','" + row[1] + "','accept','wait','wait','" + row[2] + "','" + row[3] + "','" + row[4] + "','" + row[5] + "','" + row[6] + "','" + row[7] + "','" + row[9] + "','" + row[8] + "','" + row[10] + "','" + row[11] + "')", con);
+                        var cmd1 = new SqlCommand("INSERT INTO MatchingMale(male_id, female_id, male_status, female_staus, result, age_range, mariage_status, education_level, height, weight, skin_color, does_she_work, cooking, total, average, date) " +
+                            "VALUES ('" + row[0] + "','" + row[1] + "','accept','wait','wait','" + row[2] + "','" + row[3] + "','" + row[4] + "','" + row[5] + "','" + row[6] + "','" + row[7] + "','" + row[9] + "','" + row[8] + "','" + row[10] + "','" + row[11] + "','" + DateTime.Now.ToString("MM/dd/yyyy HH:mm") + "')", con);
                         cmd1.ExecuteNonQuery();
                         cmd = new SqlCommand("SELECT MAX(rank) as rank  FROM MatchingMale WHERE male_id = " + row[0] + " ", con);
 
@@ -528,8 +528,8 @@ namespace Guryosamo.Acount
                     dt = (DataTable)Session["data"];
                     foreach (DataRow row in dt.Rows)
                     {
-                        var cmd1 = new SqlCommand("INSERT INTO MatchingFemale(female_id, male_id, male_status, female_staus, result, age_range, mariage_status, education_level, height, weight, skin_color, homework_help, total, average) " +
-                             "VALUES ('" + row[0] + "','" + row[1] + "','wait','accept','wait','" + row[2] + "','" + row[3] + "','" + row[4] + "','" + row[5] + "','" + row[6] + "','" + row[7] + "','" + row[8] + "','" + row[9] + "','" + row[10] + "')", con);
+                        var cmd1 = new SqlCommand("INSERT INTO MatchingFemale(female_id, male_id, male_status, female_staus, result, age_range, mariage_status, education_level, height, weight, skin_color, homework_help, total, average, date) " +
+                             "VALUES ('" + row[0] + "','" + row[1] + "','wait','accept','wait','" + row[2] + "','" + row[3] + "','" + row[4] + "','" + row[5] + "','" + row[6] + "','" + row[7] + "','" + row[8] + "','" + row[9] + "','" + row[10] + "', '"+ DateTime.Now.ToString("MM/dd/yyyy HH:mm") + "')", con);
                         cmd1.ExecuteNonQuery();
 
                     }

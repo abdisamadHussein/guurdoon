@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Guryosamo.Adminstraation {
-    
-    
-    public partial class Dashboard {
-        
+namespace Guryosamo.Adminstraation
+{
+
+
+    public partial class Dashboard
+    {
+
         /// <summary>
         /// allXulasho control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Guryosamo.Adminstraation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl allXulasho;
-        
+
         /// <summary>
         /// ragXulasho control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Guryosamo.Adminstraation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ragXulasho;
-        
+
         /// <summary>
         /// dumarXulasho control.
         /// </summary>
@@ -38,14 +40,5 @@ namespace Guryosamo.Adminstraation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dumarXulasho;
-        
-        /// <summary>
-        /// Print control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Print;
     }
 }

@@ -24,9 +24,9 @@ namespace Guryosamo.Auth
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
 
+            year.InnerText = DateTime.Parse(DateTime.Now.ToString("MM/dd/yyyy")).Year.ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)

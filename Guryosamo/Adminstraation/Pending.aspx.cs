@@ -58,7 +58,7 @@ namespace Guryosamo.Adminstraation
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
                 GridView1.UseAccessibleHeader = true;
-                GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
+                //GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
 
 
             }

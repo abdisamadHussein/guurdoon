@@ -2,26 +2,44 @@
 
 <%@ Register Assembly="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
     <script>
 
+
+
         $(document).ready(function () {
-            $('#datatable').DataTable({
-                columns: [
-                    { 'data': 'id' },
-                    { 'data': 'first_name' },
-                    { 'data': 'midlle_name' },
-                    { 'data': 'last_name' },
-                    { 'data': 'gender' },
-                    { 'data': 'phone' },
-                    { 'data': 'email' },
-                ],
-                bServerSide: true,
-                processing: true,
-                sAjaxSource: '../Webservices/UsersService.asmx/GetUsers',
-                sServerMethod: 'post'
+            $.ajax({
+                url: '../Webservices/reports.asmx/GetUsers',
+                method: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    $('#example').dataTable({
+                        paging: true,
+                        sort: true,
+                        searching: true,
+                        data: data,
+                        columns: [
+                            { 'data': 'id' },
+                            { 'data': 'full_name' },
+                            { 'data': 'gender' },
+                            { 'data': 'email' },
+                            { 'data': 'phone' },
+                        ],
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                }
             });
         });
 
@@ -46,7 +64,7 @@
                     <div class="col-auto ms-auto d-print-none">
                         <div class="btn-list">
 
-                          <%--  <a href="#" class="btn btn-success d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-success">
+                            <%--  <a href="#" class="btn btn-success d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-success">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -161,7 +179,7 @@
                                             <span class="text-green d-inline-flex align-items-center lh-1">Ragga
                                             </span>
                                         </div>
-                                        <div class="h1 m-0" runat="server" id ="ragXulasho"></div>
+                                        <div class="h1 m-0" runat="server" id="ragXulasho"></div>
                                         <div class="text-muted mb-3 ">Xulasho sameysay</div>
                                     </div>
                                 </div>
@@ -179,48 +197,34 @@
                                 </div>
                             </div>
 
-
-
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-12">
-                        <div class="card">
-                            <div class="card-header d-flex  justify-content-between">
-                                <h3 class="card-title">Dhamaan isticmaalayaasha</h3>
-                               
-                                    <asp:LinkButton CssClass="btn  w-25  mx-0" ID="Print" runat="server" OnClick="rpPrint_Click">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                          <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
-                                          <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
-                                          <rect x="7" y="13" width="10" height="8" rx="2" />
-                                        </svg> print
-                                    </asp:LinkButton>
-
-                                </div>
-                            <div class="card-body border-bottom py-3">
-                                <div class="table-responsive">
-                                    <table class="table card-table table-vcenter text-nowrap datatable  w-100" id="datatable">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>First Name</th>
-                                                <th>Midlle Name</th>
-                                                <th>Last Name</th>
-                                                <th>Gender</th>
-                                                <th>Phone</th>
-                                                <th>Email address</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
+                      <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">All Users</h3>
+                  </div>
+                  <div class="card-body border-bottom py-3">
+               
+                  <div class="table-responsive">
+                    <table id="example" style="width: 100%" class="table card-table table-vcenter text-nowrap datatable">
+                      <thead>
+                        <tr>
+                            <th>ID</th>
+                                        <th>Full Name</th>
+                                        <th>Gender</th>
+                                        <th>Email Address</th>
+                                        <th>Phone</th>
+                        </tr>
+                      </thead>
+                <tbody>
+                    </tbody>
+                    </table>
+                  </div>
+               
+                </div>
+              </div>
+                             </div>
                 </div>
             </div>
         </div>

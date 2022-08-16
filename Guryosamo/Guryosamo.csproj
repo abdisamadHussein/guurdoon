@@ -100,6 +100,7 @@
     <Content Include="Adminstraation\blockuser.aspx" />
     <Content Include="Adminstraation\Dashboard.aspx" />
     <Content Include="Adminstraation\Haweenka.aspx" />
+    <Content Include="Adminstraation\lamane.aspx" />
     <Content Include="Adminstraation\ManualChangePassword.aspx" />
     <Content Include="Adminstraation\Pending.aspx" />
     <Content Include="Adminstraation\Raga.aspx" />
@@ -938,8 +939,7 @@
     <Content Include="static\tracks\ff2381a011d29cefb3804436ed29f60b4faa63d6.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="Webservices\Users.asmx" />
-    <Content Include="Webservices\UsersService.asmx" />
+    <Content Include="Webservices\reports.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acount\Acount.Master.cs">
@@ -1068,6 +1068,13 @@
     <Compile Include="Adminstraation\Haweenka.aspx.designer.cs">
       <DependentUpon>Haweenka.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Adminstraation\lamane.aspx.cs">
+      <DependentUpon>lamane.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminstraation\lamane.aspx.designer.cs">
+      <DependentUpon>lamane.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Adminstraation\ManualChangePassword.aspx.cs">
       <DependentUpon>ManualChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1186,6 +1193,7 @@
       <DependentUpon>AllUsers.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\MatchSuccess.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="utils\DateRange.cs" />
     <Compile Include="LandinPage\index.aspx.cs">
@@ -1207,12 +1215,8 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Webservices\Users.asmx.cs">
-      <DependentUpon>Users.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Webservices\UsersService.asmx.cs">
-      <DependentUpon>UsersService.asmx</DependentUpon>
+    <Compile Include="Webservices\reports.asmx.cs">
+      <DependentUpon>reports.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
