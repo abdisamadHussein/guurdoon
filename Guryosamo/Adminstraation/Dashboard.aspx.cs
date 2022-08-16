@@ -20,7 +20,8 @@ namespace Guryosamo.Adminstraation
         String constr = System.Configuration.ConfigurationManager.ConnectionStrings["Db_con"].ConnectionString;
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
-
+        SqlDataReader dr;
+        SqlDataAdapter da;
         protected void Page_Load(object sender, EventArgs e)
         {
             using (con = new SqlConnection(constr))
@@ -41,11 +42,29 @@ namespace Guryosamo.Adminstraation
         protected void rpPrint_Click(object sender, EventArgs e)
         {
             ReportDocument crp = new ReportDocument();
-            crp.Load(Server.MapPath("../CrystalReports/AllUsers.rpt"));
-            ExportFormatType formatType = ExportFormatType.NoFormat;
-            formatType = ExportFormatType.PortableDocFormat;
-            crp.ExportToHttpResponse(formatType, Response, true, "AllUsers");
-            Response.End();
+
+            using (con = new SqlConnection(constr))
+            {
+                con.Open();
+                cmd = new SqlCommand("usp_Users", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                crp.Load(Server.MapPath("../CrystalReports/AllUsers.rpt"));
+                crp.SetDataSource(dt);
+
+                ExportFormatType formatType = ExportFormatType.NoFormat;
+                formatType = ExportFormatType.PortableDocFormat;
+                crp.ExportToHttpResponse(formatType, Response, true, "AllUsers");
+                Response.End();
+            }
+
+          
+
+
+          
         }
     }
 }

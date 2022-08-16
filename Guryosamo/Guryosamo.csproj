@@ -115,7 +115,7 @@
     <Content Include="Auth\linkChecker.aspx" />
     <Content Include="Auth\SignIn.aspx" />
     <Content Include="Auth\SignUp.aspx" />
-    <Content Include="Auth\vaerify.aspx" />
+    <Content Include="Auth\verify.aspx" />
     <Content Include="Auth\verification.aspx" />
     <Content Include="dist\css\demo.css" />
     <Content Include="dist\css\demo.min.css" />
@@ -1166,12 +1166,12 @@
     <Compile Include="Auth\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Auth\vaerify.aspx.cs">
-      <DependentUpon>vaerify.aspx</DependentUpon>
+    <Compile Include="Auth\verify.aspx.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Auth\vaerify.aspx.designer.cs">
-      <DependentUpon>vaerify.aspx</DependentUpon>
+    <Compile Include="Auth\verify.aspx.designer.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Auth\verification.aspx.cs">
       <DependentUpon>verification.aspx</DependentUpon>

@@ -59,7 +59,6 @@
                                             <h3 class="h1 ">Ku Soo Dhawaaw Guurdoon</h3>
                                             <div class="markdown text-muted mb-3">
                                                 Si aad u sameysid xuslashoooyinka ugana midnoqotid guurdoon
-                                        <br />
                                                 fadlan buuxi macluumadka hoose.
                                             </div>
 
@@ -265,9 +264,8 @@
                                         </div>
                                          <div class="row align-items-center" id="Lab" runat="server">
                                     <h3 class="h1 ">Ku Soo Dhawaaw Guurdoon</h3>
-                                    <div class="markdown text-muted">
+                                    <div class="markdown text-muted mb-4 mt-sm-0">
                                         Si aad u sameysid xuslashoooyinka ugana midnoqotid guurdoon
-                                                <br />
                                         fadlan buuxi macluumadka hoose.
                                     </div>
 

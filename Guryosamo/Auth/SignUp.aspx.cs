@@ -61,8 +61,11 @@ namespace Guryosamo.Auth
                         cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = tellefonka.Text;
                         cmd.Parameters.AddWithValue("@email_address", SqlDbType.VarChar).Value = email.Text;
                         cmd.Parameters.AddWithValue("@StatementType", SqlDbType.NVarChar).Value = "Insert";
-                        sendEmail(email.Text);
+                       
+                        Email(email.Text);
                         cmd.ExecuteNonQuery();
+                        //clear();
+                        Response.Redirect("./verify.aspx");
                     }
                 }
                 catch (Exception ex)
@@ -72,37 +75,38 @@ namespace Guryosamo.Auth
             }
         }
 
-        protected void sendEmail(string emilAddress)
-        {
-            using (SmtpClient smtpClient = new SmtpClient())
-            {
-                var basicCredential = new NetworkCredential("aruj877@gmail.com", "%Baba^Aruj.2");
-                using (MailMessage message = new MailMessage())
-                {
-                    MailAddress fromAddress = new MailAddress("aruj877@gmail.com");
-                    smtpClient.Host = "smtp.gmail.com";
-                    smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Credentials = basicCredential;
-                    smtpClient.EnableSsl = true;
-                    message.From = fromAddress;
-                    message.Subject = "Akoon Hubinta Guryosamo";
-                    message.IsBodyHtml = true;
-                    message.Body += "<br /><br /> Si aad u dhameystirto fadlan guji(Riix) linkiga hoose";
-                    message.Body += "<br /><a href = 'http://ns3.guurdoon.so:84/Auth/verification.aspx?email=" + email.Text + "'>Guji(riix) si aad u dhameystirto.</a>";
-                    message.Body += "<br /><br />MAHADSANID";
-                    message.To.Add(emilAddress);
-                    try
-                    {
-                        smtpClient.Send(message);
-                        Response.Redirect("./vaerify.aspx");
-                    }
-                    catch (Exception ex)
-                    {
-                        Response.Write(ex.Message);
-                    }
-                }
+        //protected void clear()
+        //{
+        //    first_name.Text = "";
+        //    middle_name.Text = "";
+        //    last_name.Text = "";
+        //    tellefonka.Text = "";
+        //    email.Text = "";
 
-            }
+
+        //}
+        static void Email(string toEmail)
+        {
+            string fromMail = "aruj877@gmail.com";
+            string fromPassword = "vqxamoexrstkbubi";
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(fromMail);
+            message.Subject = "Akoon Hubinta Guryosamo";
+            message.To.Add(new MailAddress(toEmail));
+            message.Body += "<br /><br /> Si aad u dhameystirto fadlan guji(Riix) linkiga hoose";
+            message.Body += "<br /><a href = 'http://ns3.guurdoon.so:84/Auth/verification.aspx?email=" +toEmail + "'>Guji(riix) si aad u dhameystirto.</a>";
+            message.Body += "<br /><br />MAHADSANID";
+            message.IsBodyHtml = true;
+
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(fromMail, fromPassword),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send(message);
         }
         private byte[] BytesFromString(string str)
         {

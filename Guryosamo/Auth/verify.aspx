@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vaerify.aspx.cs" Inherits="Guryosamo.Auth.vaerify" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="verify.aspx.cs" Inherits="Guryosamo.Auth.vaerify" %>
 
 <!DOCTYPE html>
 
@@ -69,13 +69,9 @@
                 <div class="row text-center align-items-center flex-row-reverse">
                     <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                         <ul class="list-inline list-inline-dots mb-0">
-                            <li class="list-inline-item">Copyright &copy; 2021
+                            <li class="list-inline-item">Copyright &copy; 2022
                               <a href="." class="link-secondary">Guryosamo</a>.
                               All rights reserved.
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="./changelog.html" class="link-secondary" rel="noopener">v1.0.0-beta 
-                                </a>
                             </li>
                         </ul>
                     </div>

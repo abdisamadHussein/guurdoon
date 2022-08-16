@@ -185,10 +185,10 @@
                     </div>
                     <div class="col-md-6 col-xl-12">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header d-flex  justify-content-between">
                                 <h3 class="card-title">Dhamaan isticmaalayaasha</h3>
-                                <div class="col-1 ms-auto text-muted">
-                                    <asp:LinkButton CssClass="btn  w-100  mx-0" ID="Print" runat="server" OnClick="rpPrint_Click">
+                               
+                                    <asp:LinkButton CssClass="btn  w-25  mx-0" ID="Print" runat="server" OnClick="rpPrint_Click">
                                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                           <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
@@ -198,7 +198,6 @@
                                     </asp:LinkButton>
 
                                 </div>
-                            </div>
                             <div class="card-body border-bottom py-3">
                                 <div class="table-responsive">
                                     <table class="table card-table table-vcenter text-nowrap datatable  w-100" id="datatable">
